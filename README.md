@@ -1,5 +1,5 @@
 # Controlador-de-riego-automatico-Tiva-TM4C123G
-Trabajo de octavo semestre de la carrera Ingeniería Electrónica de la cátedra Proyecto con Microprocesadores 1
+Trabajo de 8vo semestre de la carrera Ingeniería Electrónica de la cátedra Proyecto con Microprocesadores 1
 
 Autor: Esteban José Gamarra Duarte
 
