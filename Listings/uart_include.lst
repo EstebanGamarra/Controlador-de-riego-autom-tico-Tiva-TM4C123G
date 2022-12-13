@@ -1,0 +1,129 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 IMPORT           UART_OutChar
+    2 00000000                 IMPORT           UART_Init
+    3 00000000                 IMPORT           UART_InChar
+    4 00000000                 IMPORT           UART_OutString
+    5 00000000                 IMPORT           UART_InSDec
+    6 00000000                 IMPORT           UART_InUDec
+    7 00000000                 IMPORT           UART_OutUDec
+    8 00000000                 IMPORT           UART_OutSDec
+    9 00000000                 IMPORT           UART_InUHex
+   10 00000000                 IMPORT           UART_OutUHex
+   11 00000000                 IMPORT           UART_InString
+   12 00000000         
+   13 00000000                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=.\objects\uart_include.d -o.\objects\uart_include.o -I.\RTE\
+_Target_1 -IC:\Users\esteb\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\I
+nclude -IC:\Users\esteb\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Incl
+ude\TM4C123 --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --prede
+fine="__UVISION_VERSION SETA 535" --predefine="_RTE_ SETA 1" --predefine="TM4C1
+23GH6PM SETA 1" --predefine="_RTE_ SETA 1" --list=.\listings\uart_include.lst U
+ART_include.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+UART_InChar 00000000
+
+Symbol: UART_InChar
+   Definitions
+      At line 3 in file UART_include.s
+   Uses
+      None
+Comment: UART_InChar unused
+UART_InSDec 00000000
+
+Symbol: UART_InSDec
+   Definitions
+      At line 5 in file UART_include.s
+   Uses
+      None
+Comment: UART_InSDec unused
+UART_InString 00000000
+
+Symbol: UART_InString
+   Definitions
+      At line 11 in file UART_include.s
+   Uses
+      None
+Comment: UART_InString unused
+UART_InUDec 00000000
+
+Symbol: UART_InUDec
+   Definitions
+      At line 6 in file UART_include.s
+   Uses
+      None
+Comment: UART_InUDec unused
+UART_InUHex 00000000
+
+Symbol: UART_InUHex
+   Definitions
+      At line 9 in file UART_include.s
+   Uses
+      None
+Comment: UART_InUHex unused
+UART_Init 00000000
+
+Symbol: UART_Init
+   Definitions
+      At line 2 in file UART_include.s
+   Uses
+      None
+Comment: UART_Init unused
+UART_OutChar 00000000
+
+Symbol: UART_OutChar
+   Definitions
+      At line 1 in file UART_include.s
+   Uses
+      None
+Comment: UART_OutChar unused
+UART_OutSDec 00000000
+
+Symbol: UART_OutSDec
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+External symbols
+
+   Definitions
+      At line 8 in file UART_include.s
+   Uses
+      None
+Comment: UART_OutSDec unused
+UART_OutString 00000000
+
+Symbol: UART_OutString
+   Definitions
+      At line 4 in file UART_include.s
+   Uses
+      None
+Comment: UART_OutString unused
+UART_OutUDec 00000000
+
+Symbol: UART_OutUDec
+   Definitions
+      At line 7 in file UART_include.s
+   Uses
+      None
+Comment: UART_OutUDec unused
+UART_OutUHex 00000000
+
+Symbol: UART_OutUHex
+   Definitions
+      At line 10 in file UART_include.s
+   Uses
+      None
+Comment: UART_OutUHex unused
+11 symbols
+346 symbols in table

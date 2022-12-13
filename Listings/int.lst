@@ -1,0 +1,136 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             |.text|, CODE, READONLY
+    2 00000000         
+    3 00000000         ;*******************************************************
+                       ***********************
+    4 00000000         ;
+    5 00000000         ; Useful functions.
+    6 00000000         ;
+    7 00000000         ;*******************************************************
+                       ***********************
+    8 00000000                 EXPORT           DisableInterrupts
+    9 00000000                 EXPORT           EnableInterrupts
+   10 00000000                 EXPORT           StartCritical
+   11 00000000                 EXPORT           EndCritical
+   12 00000000                 EXPORT           WaitForInterrupt
+   13 00000000         
+   14 00000000         ;*********** DisableInterrupts ***************
+   15 00000000         ; disable interrupts
+   16 00000000         ; inputs:  none
+   17 00000000         ; outputs: none
+   18 00000000         DisableInterrupts
+   19 00000000 B672            CPSID            I
+   20 00000002 4770            BX               LR
+   21 00000004         
+   22 00000004         ;*********** EnableInterrupts ***************
+   23 00000004         ; disable interrupts
+   24 00000004         ; inputs:  none
+   25 00000004         ; outputs: none
+   26 00000004         EnableInterrupts
+   27 00000004 B662            CPSIE            I
+   28 00000006 4770            BX               LR
+   29 00000008         
+   30 00000008         ;*********** StartCritical ************************
+   31 00000008         ; make a copy of previous I bit, disable interrupts
+   32 00000008         ; inputs:  none
+   33 00000008         ; outputs: previous I bit
+   34 00000008         StartCritical
+   35 00000008 F3EF 8010       MRS              R0, PRIMASK ; save old status
+   36 0000000C B672            CPSID            I           ; mask all (except 
+                                                            faults)
+   37 0000000E 4770            BX               LR
+   38 00000010         
+   39 00000010         ;*********** EndCritical ************************
+   40 00000010         ; using the copy of previous I bit, restore I bit to pre
+                       vious value
+   41 00000010         ; inputs:  previous I bit
+   42 00000010         ; outputs: none
+   43 00000010         EndCritical
+   44 00000010 F380 8810       MSR              PRIMASK, R0
+   45 00000014 4770            BX               LR
+   46 00000016         
+   47 00000016         ;*********** WaitForInterrupt ************************
+   48 00000016         ; go to low power mode while waiting for the next interr
+                       upt
+   49 00000016         ; inputs:  none
+   50 00000016         ; outputs: none
+   51 00000016         WaitForInterrupt
+   52 00000016 BF30            WFI
+   53 00000018 4770            BX               LR
+   54 0000001A         
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   55 0000001A 00 00           ALIGN
+   56 0000001C                 END
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
+interwork --depend=.\objects\int.d -o.\objects\int.o -I.\RTE\_Target_1 -IC:\Use
+rs\esteb\AppData\Local\Arm\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include -IC:\Users\
+esteb\AppData\Local\Arm\Packs\Keil\TM4C_DFP\1.1.0\Device\Include\TM4C123 --pred
+efine="__EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VE
+RSION SETA 535" --predefine="_RTE_ SETA 1" --predefine="TM4C123GH6PM SETA 1" --
+predefine="_RTE_ SETA 1" --list=.\listings\int.lst int.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+.text 00000000
+
+Symbol: .text
+   Definitions
+      At line 1 in file int.s
+   Uses
+      None
+Comment: .text unused
+DisableInterrupts 00000000
+
+Symbol: DisableInterrupts
+   Definitions
+      At line 18 in file int.s
+   Uses
+      At line 8 in file int.s
+Comment: DisableInterrupts used once
+EnableInterrupts 00000004
+
+Symbol: EnableInterrupts
+   Definitions
+      At line 26 in file int.s
+   Uses
+      At line 9 in file int.s
+Comment: EnableInterrupts used once
+EndCritical 00000010
+
+Symbol: EndCritical
+   Definitions
+      At line 43 in file int.s
+   Uses
+      At line 11 in file int.s
+Comment: EndCritical used once
+StartCritical 00000008
+
+Symbol: StartCritical
+   Definitions
+      At line 34 in file int.s
+   Uses
+      At line 10 in file int.s
+Comment: StartCritical used once
+WaitForInterrupt 00000016
+
+Symbol: WaitForInterrupt
+   Definitions
+      At line 51 in file int.s
+   Uses
+      At line 12 in file int.s
+Comment: WaitForInterrupt used once
+6 symbols
+342 symbols in table
